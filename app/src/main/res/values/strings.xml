@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">RunningDiary</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_login">Log in</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+
+    <string name="tv_distance">Distance:</string>
+    <string name="tv_duration">Duration:</string>
+    <string name="tv_pace">Pace:</string>
+
+    <string name="btn_run_start">Start</string>
+    <string name="btn_run_pause">Pause</string>
+    <string name="btn_run_stop">Stop</string>
+
+    <string name="save_record_title">Save Record</string>
+    <string name="save_record_msg">Would you like to save this record?</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_discard">Discard</string>
+
+    <string name="btn_music_play">Play</string>
+    <string name="btn_music_pause">Pause</string>
+    <string name="btn_music_next">Next</string>
+    <string name="btn_music_previous">Previous</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="title_activity_weather">WeatherActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="tv_weather">Weather:</string>
+    <string name="tv_temperature">Temperature:</string>
+    <string name="tv_precipitation">Precipitation:</string>
+    <string name="tv_humidity">Humidity:</string>
+    <string name="tv_wind">Wind:</string>
+
+    <string name="tv_monthly_distance">Monthly Distance:</string>
+    <string name="tv_monthly_duration">Monthly Duration:</string>
+    <string name="tv_monthly_pace">Monthly Pace:</string>
+</resources>

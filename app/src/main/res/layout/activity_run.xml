@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animateLayoutChanges="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <TableLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/control_run">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/tv_distance"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/tv_km"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:text="0.00 km"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/tv_duration"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_hms"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:text="00:00:00"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_pace"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/tv_pace"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_km_h"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:text="0.00 km/h"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+        </TableRow>
+
+    </TableLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/control_run"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/control_music">
+
+        <Button
+            android:id="@+id/btn_run_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/btn_run_start"/>
+
+        <Button
+            android:id="@+id/btn_run_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_run_start"
+            android:text="@string/btn_run_pause"/>
+
+        <Button
+            android:id="@+id/btn_run_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btn_run_start"
+            android:text="@string/btn_run_stop"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/control_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_history">
+
+        <Button
+            android:id="@+id/btn_music_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/btn_music_play"/>
+
+        <Button
+            android:id="@+id/btn_music_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/btn_music_pause"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_music_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:text="@string/btn_music_next"/>
+
+        <Button
+            android:id="@+id/btn_music_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:text="@string/btn_music_previous"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btn_history"
+        android:text="Map"/>
+
+    <Button
+        android:id="@+id/btn_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/btn_history"
+        android:text="Weather"/>
+
+    <Button
+        android:id="@+id/btn_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="History"/>
+
+
+</RelativeLayout>
