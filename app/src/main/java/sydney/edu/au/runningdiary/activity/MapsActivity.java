@@ -46,17 +46,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        int numOfPoints = RunActivity.trackPoints.size();
+        int numOfPoints = RunActivity.mapPoints.size();
 
         if (numOfPoints > 0) {
-            LatLng current = RunActivity.trackPoints.get(numOfPoints - 1);
-            mMap.addMarker(new MarkerOptions().position(current).title("My Current Position"));
+            LatLng current = RunActivity.mapPoints.get(numOfPoints - 1);
+//            mMap.addMarker(new MarkerOptions().position(current).title("My Current Position"));
             CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(current, 13);
             mMap.animateCamera(cameraUpdate);
         }
 
         if (numOfPoints > 1) {
-            Iterator<LatLng> iterator = RunActivity.trackPoints.iterator();
+            Iterator<LatLng> iterator = RunActivity.mapPoints.iterator();
             LatLng start_point = iterator.next();
             LatLng end_point = null;
 

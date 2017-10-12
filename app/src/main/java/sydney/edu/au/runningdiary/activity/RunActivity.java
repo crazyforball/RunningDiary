@@ -55,7 +55,8 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
     private String locationProvider;
 
     private Location starting_location;
-    public static ArrayList<LatLng> trackPoints = new ArrayList<LatLng>();
+    private ArrayList<LatLng> trackPoints = new ArrayList<LatLng>();
+    public static ArrayList<LatLng> mapPoints;
 
     private boolean isStart = false;
 
@@ -314,6 +315,8 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         tv_duration.setText("00:00:00");
         tv_pace.setText("0.00 km/h");
         time = 0;
+        mapPoints = new ArrayList<LatLng>();
+        mapPoints.addAll(trackPoints);
         trackPoints.clear();
     }
 
