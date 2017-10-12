@@ -160,14 +160,14 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
 
                                 DBUtil.insertRecordToDatabase(RunActivity.this, record);
 
-                                resetView();
+                                reset();
 
                             }
                         })
                         .setNegativeButton(R.string.btn_discard, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                resetView();
+                                reset();
                             }
                         });
                 builder.create().show();
@@ -309,11 +309,12 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-    private void resetView() {
+    private void reset() {
         tv_distance.setText("0.00 km");
         tv_duration.setText("00:00:00");
         tv_pace.setText("0.00 km/h");
         time = 0;
+        trackPoints.clear();
     }
 
 }
