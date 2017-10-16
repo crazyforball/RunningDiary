@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="3dp">
+
+<!--    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        card_view:contentPadding="2dp"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true">-->
+
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <!--<TextView
+                android:id="@+id/tv_title_month_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/rl_history"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/tv_title_month_history"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary" />-->
+
+            <RelativeLayout
+                android:id="@+id/rl_history"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                    <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/card_view_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        card_view:contentPadding="2dp"
+                        card_view:cardBackgroundColor="@android:color/transparent"
+                        card_view:cardCornerRadius="3dp"
+                        card_view:cardElevation="3dp"
+                        card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_title"
+                                android:layout_above="@+id/refresh_layout"
+                                android:layout_centerHorizontal="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/tv_title_distance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_gravity="left"
+                                    android:gravity="center"
+                                    android:text="@string/tv_title_distance"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_title_duration"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="@string/tv_title_duration"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_title_pace"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_gravity="right"
+                                    android:gravity="center"
+                                    android:text="@string/tv_title_pace"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"/>
+
+                            </RelativeLayout>
+
+                            <android.support.v4.widget.SwipeRefreshLayout
+                                android:id="@+id/refresh_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="350dp"
+                                android:layout_above="@+id/rl_title_month"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <android.support.v7.widget.CardView
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:id="@+id/card_view_child"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_above="@+id/rl_title_month"
+                                    android:layout_below="@+id/rl_title"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    card_view:cardBackgroundColor="@android:color/transparent"
+                                    card_view:cardCornerRadius="2dp"
+                                    card_view:cardElevation="2dp"
+                                    card_view:cardUseCompatPadding="true">
+
+                                    <ListView
+                                        android:id="@+id/lv_history"
+                                        android:divider="#00000000"
+                                        android:dividerHeight="0dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"/>
+
+                                </android.support.v7.widget.CardView>
+                            </android.support.v4.widget.SwipeRefreshLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_title_month"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_above="@+id/rl_stats"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/tv_title_month_distance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_gravity="left"
+                                    android:gravity="center"
+                                    android:text="@string/tv_title_month_distance"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_title_month_duration"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="@string/tv_title_month_duration"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_title_month_pace"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_gravity="right"
+                                    android:gravity="center"
+                                    android:text="@string/tv_title_month_pace"
+                                    android:textStyle="bold"
+                                    android:textSize="15sp"/>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_stats"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/tv_month_km"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_gravity="left"
+                                    android:gravity="center"
+                                    android:text="0.00 km"
+                                    android:maxLines="1"
+                                    android:textStyle="bold"
+                                    android:textSize="20sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_month_hms"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="00:00:00"
+                                    android:maxLines="1"
+                                    android:textStyle="bold"
+                                    android:textSize="20sp"/>
+
+                                <TextView
+                                    android:id="@+id/tv_month_km_h"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_gravity="right"
+                                    android:gravity="center"
+                                    android:text="0.00 km/h"
+                                    android:maxLines="1"
+                                    android:textStyle="bold"
+                                    android:textSize="20sp"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </RelativeLayout>
+    <!--</android.support.v7.widget.CardView>-->
+
+</RelativeLayout>

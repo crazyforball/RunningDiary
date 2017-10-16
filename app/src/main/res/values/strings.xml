@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RunningDiary</string>
+    <string name="app_name">RunTime</string>
     <string name="btn_register">Register</string>
     <string name="btn_login">Log in</string>
     <string name="btn_cancel">Cancel</string>
@@ -11,7 +11,7 @@
     <string name="tv_pace">Pace:</string>
 
     <string name="btn_run_start">Start</string>
-    <string name="btn_run_pause">Pause</string>
+    <string name="btn_run_pause">Pause Stop</string>
     <string name="btn_run_stop">Stop</string>
 
     <string name="save_record_title">Save Record</string>
@@ -26,9 +26,10 @@
     <string name="title_activity_maps">Map</string>
 
     <string name="title_activity_weather">WeatherActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="nav_run">Run</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_weather">Weather</string>
+    <string name="nav_history">History</string>
 
     <string name="tv_weather">Weather:</string>
     <string name="tv_temperature">Temperature:</string>
@@ -36,7 +37,17 @@
     <string name="tv_humidity">Humidity:</string>
     <string name="tv_wind">Wind:</string>
 
-    <string name="tv_monthly_distance">Monthly Distance:</string>
-    <string name="tv_monthly_duration">Monthly Duration:</string>
-    <string name="tv_monthly_pace">Monthly Pace:</string>
+    <string name="tv_title_month_history">Month History</string>
+    <string name="tv_title_distance">Distance:</string>
+    <string name="tv_title_duration">Duration:</string>
+    <string name="tv_title_pace">Pace:</string>
+    <string name="tv_title_month_distance">Total Distance:</string>
+    <string name="tv_title_month_duration">Total Duration:</string>
+    <string name="tv_title_month_pace">Avg Pace:</string>
+
+    <string name="dialog_delete_title">Delete Record</string>
+    <string name="dialog_delete_msg">Do you want to delete this record?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
 </resources>
