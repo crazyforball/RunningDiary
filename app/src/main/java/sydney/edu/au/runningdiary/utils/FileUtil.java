@@ -23,8 +23,8 @@ public class FileUtil {
         Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
 
         ContentResolver contentResolver = context.getContentResolver();
-        Cursor cursor = contentResolver.query(uri, null, null,
-                null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
+        Cursor cursor = contentResolver.query(uri, null, MediaStore.Audio.Media.MIME_TYPE + "=? or "
+                + MediaStore.Audio.Media.MIME_TYPE + "=?", new String[]{"audio/mp3", "audio/mpeg"}, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
 
         if (cursor == null || cursor.getCount() <= 0) return null;
         while (cursor.moveToNext()) {

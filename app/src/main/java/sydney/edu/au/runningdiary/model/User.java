@@ -1,21 +1,21 @@
 package sydney.edu.au.runningdiary.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import com.orm.SugarRecord;
 
 /**
  * Created by yang on 9/29/17.
  */
 
-public class User implements Serializable{
+public class User extends SugarRecord<User> {
     private String username;
     private String password;
-    private ArrayList<Record> history;
+
+    public User() {
+    }
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.history = new ArrayList<Record>();
     }
 
     public String getUsername() {
@@ -34,11 +34,4 @@ public class User implements Serializable{
         this.password = password;
     }
 
-    public ArrayList<Record> getHistory() {
-        return history;
-    }
-
-    public void addHistory(Record record) {
-        this.history.add(record);
-    }
 }

@@ -1,152 +1,101 @@
 package sydney.edu.au.runningdiary.activity;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.MenuItem;
+
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.List;
 
 import sydney.edu.au.runningdiary.R;
-import sydney.edu.au.runningdiary.model.User;
-import sydney.edu.au.runningdiary.utils.HttpCallbackListener;
-import sydney.edu.au.runningdiary.utils.HttpUtil;
+import sydney.edu.au.runningdiary.adapter.ViewPagerAdapter;
+import sydney.edu.au.runningdiary.fragment.HistoryFragment;
+import sydney.edu.au.runningdiary.fragment.MapsFragment;
+import sydney.edu.au.runningdiary.fragment.RunFragment;
+import sydney.edu.au.runningdiary.utils.BottomNavigationViewHelper;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText et_email;
-    private EditText et_password;
-    private Button btn_login;
-    private Button btn_register;
-    private ProgressDialog progressDialog;
-    private String result;
-    private User user;
+/**
+ * Created by yang on 9/25/17.
+ */
 
-    Handler handler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            progressDialog.dismiss();
-            onActionResult(result);
-        }
-    };
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener {
 
-    private static final int ACTION_LOGIN = 1;
-    private static final int ACTION_REGISTER = 2;
-    private static int action;
+    private ViewPagerAdapter adapter;
+    public static ViewPager viewPager;
+    private MenuItem menuItem;
+    private BottomNavigationView bottomNavigationView;
 
-    private String email;
-    private String password;
+    public static List<LatLng> trackPoints;
+    public static LatLng current_position;
 
-    public static String IP = "10.0.2.2:8080";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et_email = (EditText) findViewById(R.id.email);
-        et_password = (EditText) findViewById(R.id.password);
-        btn_login = (Button) findViewById(R.id.btn_login);
-        btn_register = (Button) findViewById(R.id.btn_register);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+//        bottomNavigationView.setVisibility(View.GONE);
+        viewPager.addOnPageChangeListener(this);
 
-        btn_login.setOnClickListener(this);
-        btn_register.setOnClickListener(this);
+        setupViewPager(viewPager);
     }
 
     @Override
-    public void onClick(View v) {
-        if (!checkNetwork()) {
-            Toast toast = Toast.makeText(MainActivity.this, "Failed to connect to the network.", Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
-        }
-
-        email = et_email.getText().toString();
-        password = et_password.getText().toString();
-
-        if (email.isEmpty()) {
-            et_email.setError("email required");
-            et_email.requestFocus();
-        } else if (password.isEmpty()) {
-            et_password.setError("password required");
-            et_password.requestFocus();
-        } else {
-            String address = null;
-            if (v.getId() == R.id.btn_login) {
-                action = ACTION_LOGIN;
-                address = "http://" + IP + "/sydney/LoginServlet";
-            }
-            if (v.getId() == R.id.btn_register) {
-                action = ACTION_REGISTER;
-                address = "http://" + IP + "/sydney/RegisterServlet";
-            }
-            address = address + "?username=" + email + "&password=" + password;
-            showProgressDialog(action);
-            HttpUtil.sendGetRequest(address, new HttpCallbackListener() {
-                @Override
-                public void onFinish(String response) {
-                    result = response;
-                    handler.sendEmptyMessage(action);
-                }
-
-                @Override
-                public void onError(Exception e) {
-                    e.printStackTrace();
-                    progressDialog.dismiss();
-                }
-            });
-        }
-    }
-
-    private boolean checkNetwork() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager.getActiveNetworkInfo() != null) {
-            return connectivityManager.getActiveNetworkInfo().isAvailable();
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            /*case R.id.nav_weather:
+                viewPager.setCurrentItem(0);
+                break;*/
+            case R.id.nav_run:
+                viewPager.setCurrentItem(0);
+                break;
+            case R.id.nav_map:
+                viewPager.setCurrentItem(1);
+                break;
+            case R.id.nav_history:
+                viewPager.setCurrentItem(2);
+                break;
         }
         return false;
     }
 
-    private void showProgressDialog(int action) {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Notification");
-        if (action == ACTION_LOGIN) {
-            progressDialog.setMessage("Logging in...");
-        } else if (action == ACTION_REGISTER) {
-            progressDialog.setMessage("Registering...");
-        }
-        progressDialog.setCancelable(false);
-        progressDialog.show();
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
     }
 
-    private void onActionResult(String result) {
-        if (action == ACTION_LOGIN) {
-            if (result.isEmpty()) {
-                Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                toRunActivity();
-            }
+    @Override
+    public void onPageSelected(int position) {
+        if (menuItem != null) {
+            menuItem.setChecked(false);
+        } else {
+            bottomNavigationView.getMenu().getItem(0).setChecked(false);
         }
-        if (action == ACTION_REGISTER) {
-            if (result.isEmpty()) {
-                Toast.makeText(MainActivity.this, "Register Failed", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(MainActivity.this, "Register Successfully", Toast.LENGTH_SHORT).show();
-                toRunActivity();
-            }
-        }
+        menuItem = bottomNavigationView.getMenu().getItem(position);
+        menuItem.setChecked(true);
     }
 
-    private void toRunActivity() {
-        Intent intent = new Intent(MainActivity.this, RunActivity.class);
-        user = new User(email, password);
-        intent.putExtra("user", user);
-        startActivity(intent);
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
+
+    private void setupViewPager(ViewPager viewPager) {
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+//        adapter.addFragment(new WeatherFragment(), getString(R.string.nav_weather));
+        adapter.addFragment(new RunFragment(), getString(R.string.nav_run));
+        adapter.addFragment(new MapsFragment(), getString(R.string.nav_map));
+        adapter.addFragment(new HistoryFragment(), getString(R.string.nav_history));
+        viewPager.setAdapter(adapter);
+    }
+
 }

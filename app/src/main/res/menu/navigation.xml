@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item
+        android:id="@+id/nav_weather"
+        android:icon="@drawable/ic_cloud_black_24dp"
+        android:title="@string/nav_weather" />-->
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home"
-        app:showAsAction="always"/>
+        android:id="@+id/nav_run"
+        android:icon="@drawable/ic_directions_run_black_24dp"
+        android:title="@string/nav_run" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard"
-        app:showAsAction="always"/>
+    android:id="@+id/nav_map"
+    android:icon="@drawable/ic_explore_black_24dp"
+    android:title="@string/nav_map" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications"
-        app:showAsAction="always"/>
+        android:id="@+id/nav_history"
+        android:icon="@drawable/ic_assessment_black_24dp"
+        android:title="@string/nav_history" />
 
 </menu>
