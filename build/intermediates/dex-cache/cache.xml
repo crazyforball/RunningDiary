@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/yang/.android/build-cache/46d2f76b3274cdbac26769e1dbaaf61cf1411c59/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="/Users/yang/Documents/AndroidProject/RunningDiary/app/build/intermediates/pre-dexed/debug/classes_aa4893dbe4a8b8e3619781f197e13663d57654c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/yang/.android/build-cache/0ea1f6b5ec29fca0f00739e8f292929570cbdf3d/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -126,15 +135,6 @@
         revision="26.0.1"
         sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
         <dex dex="/Users/yang/Documents/AndroidProject/RunningDiary/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_d09cc4ed45e516b4bc70a84e1756b2a9c132f181.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/yang/.android/build-cache/b1a2dad05c95796b28e7a6a265b22b52307b1c57/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.1"
-        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
-        <dex dex="/Users/yang/Documents/AndroidProject/RunningDiary/app/build/intermediates/pre-dexed/debug/classes_56414757bcc1c3e886436c1c586013a4a4d2a2fc.jar" />
     </item>
     <item
         is-multidex="false"
