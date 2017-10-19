@@ -39,7 +39,7 @@
                     android:textColor="@color/colorPrimary"
                     android:maxLines="1"
                     android:textStyle="bold"
-                    android:textSize="35sp"/>
+                    android:textSize="40sp"/>
             </TableRow>
 
             <TableRow
@@ -56,7 +56,7 @@
                     android:text="TIME"
                     android:maxLines="1"
                     android:textStyle="bold"
-                    android:textSize="15sp"/>
+                    android:textSize="20sp"/>
             </TableRow>
         </TableLayout>
 
@@ -83,7 +83,7 @@
                     android:textColor="@color/colorPrimary"
                     android:maxLines="1"
                     android:textStyle="bold"
-                    android:textSize="75sp"/>
+                    android:textSize="80sp"/>
             </TableRow>
 
             <TableRow
@@ -100,7 +100,7 @@
                     android:text="KILOMETERS"
                     android:maxLines="1"
                     android:textStyle="bold"
-                    android:textSize="15sp"/>
+                    android:textSize="20sp"/>
             </TableRow>
         </TableLayout>
 
@@ -126,7 +126,7 @@
                     android:textColor="@color/colorPrimary"
                     android:maxLines="1"
                     android:textStyle="bold"
-                    android:textSize="35sp"/>
+                    android:textSize="40sp"/>
             </TableRow>
 
             <TableRow
@@ -143,7 +143,7 @@
                     android:text="KM/H"
                     android:maxLines="1"
                     android:textStyle="bold"
-                    android:textSize="15sp"/>
+                    android:textSize="20sp"/>
             </TableRow>
 
         </TableLayout>
@@ -154,7 +154,7 @@
         android:id="@+id/control_run"
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:layout_above="@+id/btns_music"
         android:layout_gravity="center"
         android:gravity="center">
