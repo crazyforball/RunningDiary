@@ -8,17 +8,17 @@
 
     <item
         android:id="@+id/nav_run"
-        android:icon="@drawable/ic_directions_run_black_24dp"
+        android:icon="@mipmap/ic_directions_run_black_24dp"
         android:title="@string/nav_run" />
 
     <item
     android:id="@+id/nav_map"
-    android:icon="@drawable/ic_explore_black_24dp"
+    android:icon="@mipmap/ic_explore_black_24dp"
     android:title="@string/nav_map" />
 
     <item
         android:id="@+id/nav_history"
-        android:icon="@drawable/ic_assessment_black_24dp"
+        android:icon="@mipmap/ic_assessment_black_24dp"
         android:title="@string/nav_history" />
 
 </menu>
