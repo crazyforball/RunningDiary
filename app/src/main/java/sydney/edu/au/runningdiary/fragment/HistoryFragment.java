@@ -152,7 +152,7 @@ public class HistoryFragment extends Fragment implements SwipeRefreshLayout.OnRe
                     monthly_duration += record.getDuration();
                 }
 
-                recordAdapter = new RecordAdapter(getActivity(), R.layout.activity_record, records);
+                recordAdapter = new RecordAdapter(getActivity(), R.layout.item_record, records);
                 lv_history.setAdapter(recordAdapter);
 
                 tv_monthly_distance.setText(Math.round((monthly_distance * 100)) / 100.0 + " km");

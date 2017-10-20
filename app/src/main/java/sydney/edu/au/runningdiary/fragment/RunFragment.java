@@ -92,6 +92,12 @@ public class RunFragment extends Fragment implements View.OnClickListener, View.
     private static int music_index = 0;
     private static int numOfAudios;
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        locationManager.removeUpdates(locationListener);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -204,7 +210,6 @@ public class RunFragment extends Fragment implements View.OnClickListener, View.
         switch (v.getId()) {
             case R.id.btn_run_pause_stop:
                 isStart = false;
-                locationManager.removeUpdates(locationListener);
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(R.string.save_record_title)
                         .setMessage(R.string.save_record_msg)
@@ -269,15 +274,18 @@ public class RunFragment extends Fragment implements View.OnClickListener, View.
             if (deltaDistance >= 10) {
                 starting_location = location;
                 MainActivity.current_position = new LatLng(starting_location.getLatitude(), starting_location.getLongitude());
-                MainActivity.trackPoints.add(MainActivity.current_position);
-
                 System.out.println(MainActivity.current_position);
-                //update google map
-                MapsFragment.updateMap();
 
-                totalDistance += deltaDistance;
+                if (isStart) {
+                    MainActivity.trackPoints.add(MainActivity.current_position);
+                    //update google map
+                    MapsFragment.updateMap();
+
+                    totalDistance += deltaDistance;
+                    tv_distance.setText(Math.round((totalDistance / 1000) * 100) / 100.0 + "");
+                }
+
                 deltaDistance = 0;
-                tv_distance.setText(Math.round((totalDistance/1000)*100)/100.0 + "");
             }
         }
 

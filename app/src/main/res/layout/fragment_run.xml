@@ -2,161 +2,94 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:animateLayoutChanges="true"
+    android:layout_marginTop="3dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/rl_stats"
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/tl_stats"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/control_run"
-        android:layout_gravity="center"
         android:gravity="center">
-        <TableLayout
-            android:id="@+id/tl_time"
-            android:layout_marginTop="5dp"
+
+        <TextView
+            android:id="@+id/tv_hms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/tl_distance"
             android:layout_gravity="center"
-            android:gravity="center">
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textSize="40sp"/>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_hms"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:textSize="40sp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="TIME"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
-            </TableRow>
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tl_distance"
-            android:layout_marginBottom="5dp"
+        <TextView
+            android:id="@+id/tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/tl_pace"
             android:layout_gravity="center"
-            android:gravity="center">
+            android:gravity="center"
+            android:text="TIME"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_km"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:textSize="80sp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_distance"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="KILOMETERS"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
-            </TableRow>
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tl_pace"
-            android:layout_margin="5dp"
+        <TextView
+            android:id="@+id/tv_km"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
-            android:gravity="center">
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_km_h"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:textSize="40sp"/>
-            </TableRow>
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textSize="80sp"/>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_pace"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="KM/H"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
-            </TableRow>
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="KILOMETERS"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
 
-        </TableLayout>
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_km_h"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:id="@+id/tv_pace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="KM/H"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
 
 
     <RelativeLayout
         android:id="@+id/control_run"
-        android:layout_marginBottom="5dp"
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_above="@+id/btns_music"
-        android:layout_gravity="center"
+        android:layout_height="110dp"
+        android:layout_above="@+id/control_music"
         android:gravity="center">
 
         <Button
@@ -192,78 +125,69 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/btns_music"
+        android:id="@+id/control_music"
+        android:background="@drawable/bgd_section"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
+        android:layout_height="50dp"
         android:gravity="center"
-        android:background="@drawable/bgd_section">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:id="@+id/control_music"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
+        <ImageButton
+            android:id="@+id/btn_music_logo"
+            android:src="@mipmap/ic_headset_black_18dp"
+            android:tint="@android:color/holo_orange_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="left"
+            android:background="@android:color/transparent"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/btn_music_play"
+            android:src="@mipmap/ic_play_arrow_black_18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/btn_music_play"
+            android:visibility="visible"/>
 
-            <ImageButton
-                android:id="@+id/btn_music_logo"
-                android:src="@drawable/ic_headset_black_18dp"
-                android:tint="@android:color/holo_orange_light"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="left"
-                android:background="@android:color/transparent"
-                android:visibility="gone"/>
+        <ImageButton
+            android:id="@+id/btn_music_pause"
+            android:src="@mipmap/ic_pause_black_18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/btn_music_pause"
+            android:visibility="gone"/>
 
-            <ImageButton
-                android:id="@+id/btn_music_play"
-                android:src="@drawable/ic_play_arrow_black_18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:background="@android:color/transparent"
-                android:text="@string/btn_music_play"
-                android:visibility="visible"/>
+        <ImageButton
+            android:id="@+id/btn_music_next"
+            android:src="@mipmap/ic_fast_forward_black_18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="75dp"
+            android:background="@android:color/transparent"
+            android:text="@string/btn_music_next"/>
 
-            <ImageButton
-                android:id="@+id/btn_music_pause"
-                android:src="@drawable/ic_pause_black_18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:background="@android:color/transparent"
-                android:text="@string/btn_music_pause"
-                android:visibility="gone"/>
+        <ImageButton
+            android:id="@+id/btn_music_previous"
+            android:src="@mipmap/ic_fast_rewind_black_18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="75dp"
+            android:background="@android:color/transparent"
+            android:text="@string/btn_music_previous"/>
 
-            <ImageButton
-                android:id="@+id/btn_music_next"
-                android:src="@drawable/ic_fast_forward_black_18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="75dp"
-                android:background="@android:color/transparent"
-                android:text="@string/btn_music_next"/>
-
-            <ImageButton
-                android:id="@+id/btn_music_previous"
-                android:src="@drawable/ic_fast_rewind_black_18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="75dp"
-                android:background="@android:color/transparent"
-                android:text="@string/btn_music_previous"/>
-
-        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>

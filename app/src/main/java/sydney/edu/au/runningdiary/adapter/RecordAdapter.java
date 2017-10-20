@@ -42,7 +42,7 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_record, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_record, parent, false);
             viewHolder.tv_date = (TextView) convertView.findViewById(R.id.tv_createDate);
             viewHolder.tv_distance = (TextView) convertView.findViewById(R.id.tv_distance);
             viewHolder.tv_duration = (TextView) convertView.findViewById(R.id.tv_duration);
