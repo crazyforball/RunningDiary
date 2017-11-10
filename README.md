@@ -1,18 +1,38 @@
 # RunningDiary
 ## What is this repository for?
-This is a naive running app for Android devices. 
-Apart from keeping track of basic running stats, the visualization of running routes and music player features are also added.
 
-This is the first version which stores data on phone's local database.
+This is a functional running app for Android devices. 
+
+Features:
+* Keep track of basic running stats
+* Visualization of current or historical running routes
+* Music player
+
+This is the first version where data are stored on phone's local database.
 
 ## How do I get set up?
-This project is developed using Android Studio. So import the project into Android Studio should be able to run the app.
+This project is developed using Android Studio.
 
-It is recommended to use 6.0 or higher version of Android Virtual Device, though it also works on android 4.0+ devices.
+Dependencies:
+* compileSdkVersion 25
+* buildToolsVersion 26.0.1
+* minSdkVersion 14
+* targetSdkVersion 25
+* useLibrary 'org.apache.http.legacy'
+* com.android.support:appcompat-v7:25.0.0
+* com.android.support:design:25.0.0
+* com.android.support:cardview-v7:25.0.0'
+* com.google.android.gms:play-services-maps:9.8.0
+* com.android.support:support-vector-drawable:25.0.0
+* com.android.support.constraint:constraint-layout:1.0.2
+* com.github.satyan:sugar:1.3
+* junit:junit:4.12
 
 Dependencies are defined in gradle files which would be imported automatically.
 
 No database configuration is required since this version simply keeps data in phone's sqlite database.
+
+It is recommended to use your own GoogleMap API key for further development.
 
 A generated apk is also available in the APK folder.
 
