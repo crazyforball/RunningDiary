@@ -1,4 +1,7 @@
 # RunningDiary
+## Video Demo
+[YouTube] (https://youtu.be/w6ZzzM0QnJ8)
+
 ## What is this repository for?
 
 This is a functional running app for Android devices. 
